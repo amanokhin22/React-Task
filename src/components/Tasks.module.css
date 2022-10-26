@@ -1,0 +1,16 @@
+.box {
+  margin: 50px 900px;
+  max-width: 700px;
+}
+
+.textField {
+  border-radius: 15px;
+  font-family: "Times New Roman", serif;
+  font-size: 30px;
+  max-width: 700px;
+}
+
+.sendButton {
+  margin: 10px 0 10px 300px;
+  position: absolute;
+}
