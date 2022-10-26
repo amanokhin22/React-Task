@@ -18,9 +18,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve"
   },
   "include": [
-    "src", "tsconfig", "src/@types", "react-redux"
+    "src",
+    "tsconfig",
+    "src/@types",
+    "react-redux"
   ]
 }

@@ -34,8 +34,8 @@ const AddTask: React.FC<FormPropsType> = ({onAddTask}) => {
                            label="Wright new task"
                 />
             </div>
-            <div>
-                    <Button className={styles.sendButton} disabled={task.length <= 3} onClick={handleClick} variant="contained" endIcon={<SendIcon/>}>
+            <div className={styles.sendButton}>
+                    <Button disabled={task.length <= 3} onClick={handleClick} variant="contained" endIcon={<SendIcon/>}>
                         Send
                     </Button>
             </div>

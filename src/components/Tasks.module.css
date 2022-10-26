@@ -1,16 +1,38 @@
 .box {
-  margin: 50px 900px;
-  max-width: 700px;
+  margin: 0 auto !important;
 }
 
 .textField {
+  margin: 0 auto !important;
   border-radius: 15px;
   font-family: "Times New Roman", serif;
   font-size: 30px;
-  max-width: 700px;
+  width: 700px !important;
 }
 
 .sendButton {
-  margin: 10px 0 10px 300px;
+  margin: 10px 0 10px;
+  text-align: center;
+
+}
+
+.allTaskList {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modalWindow {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: white;
+  border: 2px solid #000;
+  boxShadow: 24;
+  p: 4,
+}
+
+.inModal {
+  margin-top: 2px;
 }
