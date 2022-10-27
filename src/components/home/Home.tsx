@@ -1,28 +1,35 @@
-import React from 'react';
-import {useAppSelector} from '../../app/hooks';
+import React, {useEffect} from 'react';
+import {useAppDispatch, useAppSelector} from '../../app/hooks';
 
 
-import AddTask from "../addText/AddTask";
-import TasksList from "../textList/TasksList";
+import AddTask, {AddTaskDTO} from "../addTask/AddTask";
+import TasksList from "../taskList/TasksList";
 import {selectTasksList} from "../../selectors/Selectors";
+import {Task} from "../../types/TaskTypes";
+import {deleteTask, fetchTask, postTask, putTask} from "../../redux/asyncThunk";
 
 
 export const Home: React.FC = () => {
     const taskList = useAppSelector(selectTasksList);
-    //const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchTask());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
 
-    const addTaskHandler = () => {
-
+    const addTaskHandler = async (data: AddTaskDTO ) => {
+        await dispatch(postTask(data))
     }
 
-    // const onTasksListDelete = (task: Task) => {
-    //
-    // }
-    //
-    // const onTasksListToggle = (task: Task) => {
-    //
-    // }
+    const onTasksListDelete = async (task: Task) => {
+        await dispatch(deleteTask(task));
+    }
+
+    const onTasksListToggle = async (task: Task) => {
+        await dispatch(putTask(task));
+    }
 
     return (
         <div>
@@ -30,7 +37,7 @@ export const Home: React.FC = () => {
                 <AddTask onAddTask={addTaskHandler}/>
             </div>
             <div>
-                <TasksList taskList={taskList} />
+                <TasksList taskList={taskList} onToggle={onTasksListToggle} onDelete={onTasksListDelete}/>
             </div>
         </div>
     );

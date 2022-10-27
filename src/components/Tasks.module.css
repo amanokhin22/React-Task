@@ -1,38 +1,66 @@
-.box {
-  margin: 0 auto !important;
+
+.inputWrapper {
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
 }
 
 .textField {
-  margin: 0 auto !important;
-  border-radius: 15px;
-  font-family: "Times New Roman", serif;
-  font-size: 30px;
-  width: 700px !important;
+    width: 500px;
+    margin-top: 50px;
+    border-radius: 15px;
+    font-family: "Times New Roman", serif;
+    font-size: 30px;
 }
 
 .sendButton {
-  margin: 10px 0 10px;
-  text-align: center;
+    margin: 10px 0 10px;
+    text-align: center;
 
 }
 
 .allTaskList {
-  margin: 0 auto;
-  text-align: center;
+    text-align: center;
+    justify-content: center;
 }
 
-.modalWindow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  background-color: white;
-  border: 2px solid #000;
-  boxShadow: 24;
-  p: 4,
+.text {
+    cursor: pointer;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: left top no-repeat;
+    text-decoration: line-through;
 }
 
-.inModal {
-  margin-top: 2px;
+
+.ul {
+    list-style: none;
+}
+
+.li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input:checked + span {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.buttonsTasks {
+    width: 30px;
+    height: 35px;
+}
+.doneButton {
+    color: green;
+    margin: 25px;
+
+}
+
+.deleteButton {
+    color: red;
+
 }
