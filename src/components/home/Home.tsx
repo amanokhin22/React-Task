@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from '../../app/hooks';
 
 
-import AddTask, {AddTaskDTO} from "../addTask/AddTask";
+import AddTask from "../addTask/AddTask";
 import TasksList from "../taskList/TasksList";
 import {selectTasksList} from "../../selectors/Selectors";
-import {Task} from "../../types/TaskTypes";
+import {AddTaskDTO, Task} from "../../types/TaskTypes";
 import {deleteTask, fetchTask, postTask, putTask} from "../../redux/asyncThunk";
 
 
@@ -19,7 +19,7 @@ export const Home: React.FC = () => {
     }, []);
 
 
-    const addTaskHandler = async (data: AddTaskDTO ) => {
+    const addTaskHandler = async (data: AddTaskDTO) => {
         await dispatch(postTask(data))
     }
 

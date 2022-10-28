@@ -1,7 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import { apiTask } from "../API/apiTask";
-import {Task} from "../types/TaskTypes";
-import {AddTaskDTO} from "../components/addTask/AddTask";
+import {apiTask} from "../API/apiTask";
+import {AddTaskDTO, Task} from "../types/TaskTypes";
 
 
 export const fetchTask = createAsyncThunk(

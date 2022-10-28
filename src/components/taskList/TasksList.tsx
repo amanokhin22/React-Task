@@ -3,41 +3,35 @@ import React from 'react';
 import style from '../Tasks.module.css';
 
 import Button from '@mui/material/Button';
-import {Task} from '../../types/TaskTypes';
+import {ListPropsType} from '../../types/TaskTypes';
 import DeleteIcon from '@mui/icons-material/Delete';
+import {FormControlLabel, FormGroup, Switch} from "@mui/material";
 
-
-export interface ListPropsType {
-    taskList: Task[];
-    onToggle: (task: Task) => void;
-    onDelete: (task: Task) => void;
-}
 
 const TasksList: React.FC<ListPropsType> = ({taskList, onDelete, onToggle}) => {
 
     return (
         <div className={style.allTaskList}>
-            <h2 className={style.h2}>'The main list of tasks'</h2>
+            <h2>'The main list of tasks'</h2>
             <ul className={style.ul}>
                 {
                     taskList.map((task) => <li key={task.id} className={style.li}>
-                            <label>
-                                <input type={'checkbox'}
-                                       className={style.text}/>
-
-                                <span> { task.name } </span>
+                            <FormGroup>
+                                <FormControlLabel onClick={() => onToggle(task)}
+                                                  control={<Switch checked={task.completed} size="small"/>}
+                                                  label={task.completed ? 'Do' : 'Done'}
+                                />
+                                <span> {task.name} </span>
 
                                 <div>
-                                    <Button onClick={() => onToggle(task)} className={style.doneButton} variant="outlined">
-                                        {task.completed ? 'Back' : 'Done'}
-                                    </Button>
-                                    <Button onClick={() => onDelete(task)} className={style.deleteButton}
+                                    <Button onClick={() => onDelete(task)}
                                             variant="outlined"
-                                            startIcon={<DeleteIcon/>}>
+                                            startIcon={<DeleteIcon/>}
+                                            className={style.deleteButton}>
                                         Delete
                                     </Button>
                                 </div>
-                            </label>
+                            </FormGroup>
                         </li>
                     )
                 }

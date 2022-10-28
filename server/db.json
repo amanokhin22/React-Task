@@ -1,33 +1,8 @@
 {
   "tasks": [
     {
-      "id": 5,
-      "name": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-      "completed": true
-    },
-    {
-      "id": 8,
-      "name": "quo adipisci enim quam ut ab",
-      "completed": true
-    },
-    {
-      "id": 9,
-      "name": "molestiae perspiciatis ipsa",
-      "completed": false
-    },
-    {
       "id": 10,
       "name": "illo est ratione doloremque quia maiores aut",
-      "completed": true
-    },
-    {
-      "id": 11,
-      "name": "vero rerum temporibus dolor",
-      "completed": true
-    },
-    {
-      "id": 12,
-      "name": "ipsa repellendus fugit nisi",
       "completed": true
     },
     {
@@ -69,6 +44,32 @@
       "id": 20,
       "name": "ullam nobis libero sapiente ad optio sint",
       "completed": true
+    },
+    {
+      "name": "Abusus non tollit usum — Злоупотребление не отменяет употребления",
+      "id": 21,
+      "completed": true
+    },
+    {
+      "name": "Vi veri universum (veniversum) vivus vici — Силой истины я, живущий, покорил вселенную",
+      "id": 22,
+      "completed": true
+    },
+    {
+      "name": "Verum est quod pro salute fit mendacium — Ложь во спасение правде равносильна",
+      "id": 23
+    },
+    {
+      "name": "Vita sine libertate, nihil — Жизнь без свободы — ничто",
+      "id": 24
+    },
+    {
+      "name": "Omnis homo mendax — Каждый человек — лжец",
+      "id": 25
+    },
+    {
+      "name": "Unus pro omnibus, omnes pro uno — Один за всех, все за одного",
+      "id": 26
     }
   ]
 }

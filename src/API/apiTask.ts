@@ -1,6 +1,5 @@
 import axios from 'axios';
-import {AddTaskDTO} from '../components/addTask/AddTask';
-import {Task} from "../types/TaskTypes";
+import {AddTaskDTO, Task} from "../types/TaskTypes";
 
 
 const axiosInstance = axios.create({
