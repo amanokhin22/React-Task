@@ -1,9 +1,11 @@
 import {configureStore, ThunkAction, Action} from '@reduxjs/toolkit';
 import taskSliceReducer from '../redux/taskSlice';
+import modalSliceReducer from '../redux/modalSlice';
 
 export const store = configureStore({
     reducer: {
         task: taskSliceReducer,
+        modal: modalSliceReducer,
     },
 });
 

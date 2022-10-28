@@ -1,23 +1,8 @@
 {
   "tasks": [
     {
-      "id": 10,
-      "name": "illo est ratione doloremque quia maiores aut",
-      "completed": true
-    },
-    {
-      "id": 13,
-      "name": "et doloremque nulla",
-      "completed": true
-    },
-    {
       "id": 14,
       "name": "repellendus sunt dolores architecto voluptatum",
-      "completed": true
-    },
-    {
-      "id": 15,
-      "name": "ab voluptatum amet voluptas",
       "completed": true
     },
     {
@@ -28,12 +13,12 @@
     {
       "id": 17,
       "name": "quo laboriosam deleniti aut qui",
-      "completed": false
+      "completed": true
     },
     {
       "id": 18,
       "name": "dolorum est consequatur ea mollitia in culpa",
-      "completed": false
+      "completed": true
     },
     {
       "id": 19,
@@ -57,19 +42,23 @@
     },
     {
       "name": "Verum est quod pro salute fit mendacium — Ложь во спасение правде равносильна",
-      "id": 23
+      "id": 23,
+      "completed": true
     },
     {
       "name": "Vita sine libertate, nihil — Жизнь без свободы — ничто",
-      "id": 24
+      "id": 24,
+      "completed": true
     },
     {
       "name": "Omnis homo mendax — Каждый человек — лжец",
-      "id": 25
+      "id": 25,
+      "completed": true
     },
     {
       "name": "Unus pro omnibus, omnes pro uno — Один за всех, все за одного",
-      "id": 26
+      "id": 26,
+      "completed": true
     }
   ]
 }
