@@ -1,0 +1,66 @@
+
+.inputWrapper {
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.textField {
+    width: 500px;
+    margin-top: 50px;
+    border-radius: 15px;
+    font-family: "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.sendButton {
+    margin: 10px 0 10px;
+    text-align: center;
+
+}
+
+.allTaskList {
+    text-align: center;
+    justify-content: center;
+}
+
+.text {
+    cursor: pointer;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: left top no-repeat;
+    text-decoration: line-through;
+}
+
+
+.ul {
+    list-style: none;
+}
+
+.li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input:checked + span {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.buttonsTasks {
+    width: 30px;
+    height: 35px;
+}
+.doneButton {
+    color: green;
+    margin: 25px;
+
+}
+
+.deleteButton {
+    color: red;
+
+}
