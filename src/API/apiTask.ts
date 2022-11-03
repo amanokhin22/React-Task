@@ -25,7 +25,7 @@ export const apiTask = {
     },
 
     async put(task: Task) {
-        await axiosInstance.put(`/${task.id}`, {...task, completed: !task.completed});
+        await axiosInstance.put(`/${task.id}`, task);
     },
 }
 

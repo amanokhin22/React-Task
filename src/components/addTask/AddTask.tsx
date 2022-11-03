@@ -23,7 +23,7 @@ const AddTask: React.FC<FormPropsType> = ({onAddTask}) => {
         <div className={styles.inputWrapper}>
             <div className={styles.inputWrapper}>
                 <TextField value={name} onChange={handleChangeName} className={styles.textField}
-                           label="Wright new task"
+                           label="Create new task"
                 />
             </div>
             <div className={styles.sendButton}>

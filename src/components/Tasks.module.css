@@ -62,11 +62,9 @@ input:checked + span {
 
 
 .deleteButton {
-    color: red !important;
     border-radius: 10px !important;
     font-size: 0.8vw !important;
     width: 80px;
     height: 40px;
-
 
 }

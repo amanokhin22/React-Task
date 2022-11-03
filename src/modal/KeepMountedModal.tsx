@@ -2,11 +2,14 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
-import {useAppDispatch, useAppSelector} from "../app/hooks";
-import {selectIsModalOpen, selectModalTask} from "../selectors/Selectors";
-import {closeModal} from "../redux/modalSlice";
-import {useEffect, useState} from "react";
-import {TextareaAutosize} from "@mui/material";
+import {useAppDispatch, useAppSelector} from '../app/hooks';
+import {selectIsModalOpen, selectModalTask} from '../selectors/Selectors';
+import {closeModal} from '../redux/modalSlice';
+import {useEffect, useState} from 'react';
+import {Button, TextareaAutosize} from '@mui/material';
+import {Task} from '../types/TaskTypes';
+import styles from './Modal.module.css'
+import {putTask} from "../redux/asyncThunkTask";
 
 
 const style = {
@@ -24,13 +27,26 @@ const style = {
 export const KeepMountedModal: React.FC = () => {
 
     const isOpen = useAppSelector(selectIsModalOpen);
-    const task = useAppSelector(selectModalTask);
+    const task: Task = useAppSelector(selectModalTask)!;
     const dispatch = useAppDispatch();
     const [name, setName] = useState('');
 
     useEffect(() => {
         setName(task ? task.name : '')
     }, [task])
+
+    const handleEditModal = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setName(event.target.value)
+    }
+
+    const handleAddEditTask = (event: React.UIEvent) => {
+        event.preventDefault();
+        if  (name.length <= 3) {
+            setName(task.name)
+        } else {
+            dispatch(putTask({...task, name}))
+        }
+    }
 
     const handleClose = () => dispatch(closeModal());
 
@@ -49,7 +65,10 @@ export const KeepMountedModal: React.FC = () => {
                 <Typography id="keep-mounted-modal-description" sx={{mt: 2}}>
                     {task && task.name}
                 </Typography>
-                <TextareaAutosize value={name}/>
+                <TextareaAutosize value={name} onChange={handleEditModal} className={styles.textarea}/>
+                <Button size="small" onClick={handleAddEditTask} variant="contained" color="success">
+                    Add Edit task
+                </Button>
             </Box>
         </Modal>
     );

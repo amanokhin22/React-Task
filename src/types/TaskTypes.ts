@@ -27,3 +27,8 @@ export interface ListPropsType {
     onToggle: (task: Task) => void;
     onDelete: (task: Task) => void;
 }
+
+export interface ModalState {
+    isOpened: boolean;
+    taskId?: number;
+}

@@ -1,15 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
+import {ModalState} from "../types/TaskTypes";
 
-
-export interface ModalState {
-    isOpened: boolean;
-    taskId?: number;
-}
 
 const initialState: ModalState = {
     isOpened: false,
-    taskId: 0,
+    taskId: 0
 }
 
 export const modalSlice = createSlice({
@@ -27,7 +23,7 @@ export const modalSlice = createSlice({
     },
 })
 
-export const {openModal, closeModal} = modalSlice.actions;
 
+export const {openModal, closeModal} = modalSlice.actions;
 
 export default modalSlice.reducer;

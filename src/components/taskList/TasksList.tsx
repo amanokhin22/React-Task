@@ -24,12 +24,13 @@ const TasksList: React.FC<ListPropsType> = ({taskList, onDelete, onToggle}) => {
                             <FormGroup>
                                 <FormControlLabel onClick={() => onToggle(task)}
                                                   control={<Switch checked={task.completed} size="small"/>}
-                                                  label={task.completed ? 'Do' : 'Done'}
+                                                  label={task.completed ? 'To do' : 'Done'}
                                 />
                                 <span onClick={() => dispatch(openModal(task.id))}>{task.name}</span>
                                 <div>
                                     <Button onClick={() => onDelete(task)}
                                             variant="outlined"
+                                            color="error"
                                             startIcon={<DeleteIcon/>}
                                             className={style.deleteButton}>
                                         Delete
@@ -40,8 +41,7 @@ const TasksList: React.FC<ListPropsType> = ({taskList, onDelete, onToggle}) => {
                     )
                 }
             </ul>
-            <KeepMountedModal/>
-
+            <KeepMountedModal />
         </div>
     )
 }

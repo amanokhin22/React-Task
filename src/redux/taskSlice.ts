@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 import {Task, TaskState} from '../types/TaskTypes';
-import {deleteTask, fetchTask, postTask, putTask} from "./asyncThunk";
+import {deleteTask, fetchTask, postTask, toggleTask} from "./asyncThunkTask";
 
 
 const initialState: TaskState = {
@@ -57,13 +57,13 @@ export const taskSlice = createSlice({
         });
 
 
-        builder.addCase(putTask.pending, (state) => {
+        builder.addCase(toggleTask.pending, (state) => {
             state.loading = true
         });
-        builder.addCase(putTask.fulfilled, (state) => {
+        builder.addCase(toggleTask.fulfilled, (state) => {
             state.loading = false;
         });
-        builder.addCase(putTask.rejected, (state) => {
+        builder.addCase(toggleTask.rejected, (state) => {
             state.taskList = [];
             state.loading = false
         });

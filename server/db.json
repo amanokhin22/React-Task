@@ -1,21 +1,6 @@
 {
   "tasks": [
     {
-      "id": 14,
-      "name": "repellendus sunt dolores architecto voluptatum",
-      "completed": true
-    },
-    {
-      "id": 16,
-      "name": "accusamus eos facilis sint et aut voluptatem",
-      "completed": true
-    },
-    {
-      "id": 17,
-      "name": "quo laboriosam deleniti aut qui",
-      "completed": true
-    },
-    {
       "id": 18,
       "name": "dolorum est consequatur ea mollitia in culpa",
       "completed": true
@@ -58,6 +43,66 @@
     {
       "name": "Unus pro omnibus, omnes pro uno — Один за всех, все за одного",
       "id": 26,
+      "completed": true
+    },
+    {
+      "name": "Abyssus abyssum invocat — Бездна взывает к бездне",
+      "id": 27,
+      "completed": true
+    },
+    {
+      "name": "Abusus non tollit usum — Злоупотребление не отменяет употребления",
+      "id": 28,
+      "completed": true
+    },
+    {
+      "name": "Abusus non tollit usum — Злоупотребление не отменяет употребления",
+      "id": 29,
+      "completed": true
+    },
+    {
+      "name": "Abusus non tollit usum — Злоупотребление не отменяет употребления",
+      "id": 30,
+      "completed": true
+    },
+    {
+      "name": "Abyssus abyssum invocat — Бездна взывает к бездне",
+      "id": 31,
+      "completed": true
+    },
+    {
+      "name": "quo laboriosam deleniti aut qui",
+      "id": 32,
+      "completed": true
+    },
+    {
+      "name": "Abyssus abyssum invocat — Бездна взывает к бездне",
+      "id": 33,
+      "completed": true
+    },
+    {
+      "name": "quo laboriosam deleniti aut qui",
+      "id": 34,
+      "completed": true
+    },
+    {
+      "name": "size=\"small\"",
+      "id": 35,
+      "completed": true
+    },
+    {
+      "name": "Ничего не понял",
+      "id": 36,
+      "completed": true
+    },
+    {
+      "name": "Homo homini lupus est — Человек человеку волк",
+      "id": 37,
+      "completed": true
+    },
+    {
+      "name": "Homo sum, humani nihil a me alienum puto — Я человек, ничто человеческое мне не чуждо",
+      "id": 38,
       "completed": true
     }
   ]

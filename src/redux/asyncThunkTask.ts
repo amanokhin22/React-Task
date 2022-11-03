@@ -24,6 +24,14 @@ export const postTask = createAsyncThunk(
     }
 );
 
+export const toggleTask = createAsyncThunk(
+    'task/toggleTask',
+    async (task: Task, {dispatch}) => {
+        await apiTask.put({...task, completed: !task.completed});
+        await dispatch(fetchTask());
+    }
+);
+
 export const putTask = createAsyncThunk(
     'task/putTask',
     async (task: Task, {dispatch}) => {

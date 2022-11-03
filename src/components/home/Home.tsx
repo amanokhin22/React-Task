@@ -6,7 +6,7 @@ import AddTask from "../addTask/AddTask";
 import TasksList from "../taskList/TasksList";
 import {selectTasksList} from "../../selectors/Selectors";
 import {AddTaskDTO, Task} from "../../types/TaskTypes";
-import {deleteTask, fetchTask, postTask, putTask} from "../../redux/asyncThunk";
+import {deleteTask, fetchTask, postTask, toggleTask} from "../../redux/asyncThunkTask";
 
 
 export const Home: React.FC = () => {
@@ -28,7 +28,7 @@ export const Home: React.FC = () => {
     }
 
     const onTasksListToggle = async (task: Task) => {
-        await dispatch(putTask(task));
+        await dispatch(toggleTask(task));
     }
 
     return (
@@ -37,7 +37,7 @@ export const Home: React.FC = () => {
                 <AddTask onAddTask={addTaskHandler}/>
             </div>
             <div>
-                <TasksList taskList={taskList} onToggle={onTasksListToggle} onDelete={onTasksListDelete}/>
+                <TasksList taskList={taskList} onToggle={onTasksListToggle} onDelete={onTasksListDelete} />
             </div>
         </div>
     );

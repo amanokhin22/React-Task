@@ -4,7 +4,7 @@ import modalSliceReducer from '../redux/modalSlice';
 
 export const store = configureStore({
     reducer: {
-        task: taskSliceReducer,
+        task:  taskSliceReducer,
         modal: modalSliceReducer,
     },
 });
