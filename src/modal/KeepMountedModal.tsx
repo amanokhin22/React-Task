@@ -39,14 +39,24 @@ export const KeepMountedModal: React.FC = () => {
         setName(event.target.value)
     }
 
-    const handleAddEditTask = (event: React.UIEvent) => {
-        event.preventDefault();
-        if  (name.length <= 3) {
+    const submit = () => {
+        if (name.length <= 3) {
             setName(task.name)
         } else {
             dispatch(putTask({...task, name}))
         }
-    }
+    };
+
+    const handleAddEditTask = (event: React.UIEvent) => {
+        event.preventDefault();
+        submit();
+    };
+
+    const handleAddEditTaskEnter = (event: React.KeyboardEvent) => {
+        if (event.key === "Enter") {
+            submit();
+        }
+    };
 
     const handleClose = () => dispatch(closeModal());
 
@@ -65,7 +75,8 @@ export const KeepMountedModal: React.FC = () => {
                 <Typography id="keep-mounted-modal-description" sx={{mt: 2}}>
                     {task && task.name}
                 </Typography>
-                <TextareaAutosize value={name} onChange={handleEditModal} className={styles.textarea}/>
+                <TextareaAutosize onKeyDown={handleAddEditTaskEnter} value={name} onChange={handleEditModal}
+                                  className={styles.textarea} autoFocus={true}/>
                 <Button size="small" onClick={handleAddEditTask} variant="contained" color="success">
                     Add Edit task
                 </Button>

@@ -1,13 +1,8 @@
 {
   "tasks": [
     {
-      "id": 18,
-      "name": "dolorum est consequatur ea mollitia in culpa",
-      "completed": true
-    },
-    {
       "id": 19,
-      "name": "molestiae ipsa aut voluptatibus pariatur dolor nihil",
+      "name": "In hoc signo vinces — Под этим знаменем ты победишь",
       "completed": true
     },
     {
@@ -83,16 +78,6 @@
     {
       "name": "quo laboriosam deleniti aut qui",
       "id": 34,
-      "completed": true
-    },
-    {
-      "name": "size=\"small\"",
-      "id": 35,
-      "completed": true
-    },
-    {
-      "name": "Ничего не понял",
-      "id": 36,
       "completed": true
     },
     {
