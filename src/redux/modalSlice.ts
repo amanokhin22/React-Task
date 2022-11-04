@@ -5,7 +5,7 @@ import {ModalState} from "../types/TaskTypes";
 
 const initialState: ModalState = {
     isOpened: false,
-    taskId: 0
+    taskId: 0,
 }
 
 export const modalSlice = createSlice({
@@ -22,7 +22,6 @@ export const modalSlice = createSlice({
         },
     },
 })
-
 
 export const {openModal, closeModal} = modalSlice.actions;
 

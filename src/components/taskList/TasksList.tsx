@@ -7,12 +7,13 @@ import {ListPropsType} from '../../types/TaskTypes';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {FormControlLabel, FormGroup, Switch} from "@mui/material";
 import {KeepMountedModal} from "../../modal/KeepMountedModal";
-import {useAppDispatch} from "../../app/hooks";
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {openModal} from "../../redux/modalSlice";
+import {selectSubTasksList} from "../../selectors/Selectors";
 
 
 const TasksList: React.FC<ListPropsType> = ({taskList, onDelete, onToggle}) => {
-
+    const subTaskList = useAppSelector(selectSubTasksList)
     const dispatch = useAppDispatch();
 
     return (
@@ -41,7 +42,7 @@ const TasksList: React.FC<ListPropsType> = ({taskList, onDelete, onToggle}) => {
                     )
                 }
             </ul>
-            <KeepMountedModal />
+            <KeepMountedModal subTaskList={subTaskList}/>
         </div>
     )
 }

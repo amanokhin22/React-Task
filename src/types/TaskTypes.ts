@@ -32,3 +32,25 @@ export interface ModalState {
     isOpened: boolean;
     taskId?: number;
 }
+
+export interface SubTask {
+    name: string;
+    id: number;
+    completed: boolean;
+    taskId?: number;
+}
+
+export interface SubTaskState {
+    subTaskList: SubTask[];
+    loading: boolean;
+}
+
+export interface STListPropsType {
+    subTaskList: SubTask[];
+}
+
+export interface SubTaskType {
+    onAddSubTask: (data: AddSubTaskDTO) => void;
+}
+
+export type AddSubTaskDTO = Pick<SubTask, 'name'>

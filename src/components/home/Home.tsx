@@ -15,6 +15,7 @@ export const Home: React.FC = () => {
 
     useEffect(() => {
         dispatch(fetchTask());
+        //dispatch(fetchSubTask())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

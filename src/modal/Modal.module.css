@@ -1,4 +1,8 @@
 .textarea {
   min-height: 110px !important;
-  min-width: 300px !important;
+  min-width: 400px !important;
+  padding: 20px;
+}
+.checkBox {
+  padding: 15px !important;
 }

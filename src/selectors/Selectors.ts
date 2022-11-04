@@ -16,3 +16,7 @@ export const selectModalTask = createSelector(
     selectModalTaskId,
     (taskList, taskId) => taskList.find(task => task.id === taskId)
 )
+
+export const selectSubTasks = (state: RootState) => state.subTask;
+
+export const selectSubTasksList = createSelector(selectSubTasks, (subTask) => subTask.subTaskList);

@@ -2,12 +2,12 @@
   "tasks": [
     {
       "id": 19,
-      "name": "In hoc signo vinces — Под этим знаменем ты победишь",
+      "name": "In hoc signo vinces — Под этим знаменем ты победишь!!!",
       "completed": true
     },
     {
       "id": 20,
-      "name": "ullam nobis libero sapiente ad optio sint",
+      "name": "SubTask",
       "completed": true
     },
     {
@@ -89,6 +89,14 @@
       "name": "Homo sum, humani nihil a me alienum puto — Я человек, ничто человеческое мне не чуждо",
       "id": 38,
       "completed": true
+    }
+  ],
+  "subTasks": [
+    {
+      "name": "",
+      "id": 12,
+      "completed": true,
+      "taskId": 34
     }
   ]
 }

@@ -6,25 +6,26 @@ import {useAppDispatch, useAppSelector} from '../app/hooks';
 import {selectIsModalOpen, selectModalTask} from '../selectors/Selectors';
 import {closeModal} from '../redux/modalSlice';
 import {useEffect, useState} from 'react';
-import {Button, TextareaAutosize} from '@mui/material';
-import {Task} from '../types/TaskTypes';
+import {FormControl, TextareaAutosize} from '@mui/material';
+import {AddSubTaskDTO, STListPropsType, Task} from '../types/TaskTypes';
 import styles from './Modal.module.css'
 import {putTask} from "../redux/asyncThunkTask";
-
+import {SubTaskComponent} from "../components/subTaskInModal/SubTaskComponent";
+import {postSubTask} from "../redux/asyncThunkSubTask";
 
 const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 800,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
 };
 
-export const KeepMountedModal: React.FC = () => {
+export const KeepMountedModal: React.FC<STListPropsType> = ({subTaskList}) => {
 
     const isOpen = useAppSelector(selectIsModalOpen);
     const task: Task = useAppSelector(selectModalTask)!;
@@ -40,16 +41,14 @@ export const KeepMountedModal: React.FC = () => {
     }
 
     const submit = () => {
+        if (name === task.name) {
+            return;
+        }
         if (name.length <= 3) {
             setName(task.name)
         } else {
             dispatch(putTask({...task, name}))
         }
-    };
-
-    const handleAddEditTask = (event: React.UIEvent) => {
-        event.preventDefault();
-        submit();
     };
 
     const handleAddEditTaskEnter = (event: React.KeyboardEvent) => {
@@ -58,7 +57,15 @@ export const KeepMountedModal: React.FC = () => {
         }
     };
 
+    const handleAddEditTaskOut = () => {
+        submit();
+    };
+
     const handleClose = () => dispatch(closeModal());
+
+    const onSubTaskComponentAddSubTask = (data: AddSubTaskDTO) => {
+        dispatch(postSubTask())
+    }
 
     return (
         <Modal
@@ -75,11 +82,22 @@ export const KeepMountedModal: React.FC = () => {
                 <Typography id="keep-mounted-modal-description" sx={{mt: 2}}>
                     {task && task.name}
                 </Typography>
-                <TextareaAutosize onKeyDown={handleAddEditTaskEnter} value={name} onChange={handleEditModal}
-                                  className={styles.textarea} autoFocus={true}/>
-                <Button size="small" onClick={handleAddEditTask} variant="contained" color="success">
-                    Add Edit task
-                </Button>
+                <FormControl>
+
+                    <TextareaAutosize onBlur={handleAddEditTaskOut} onKeyDown={handleAddEditTaskEnter}
+                                      value={name} onChange={handleEditModal}
+                                      className={styles.textarea} autoFocus={true}/>
+                </FormControl>
+
+                <ul>
+                    {
+                        subTaskList.map((subTask) => <li key={task.id}>
+                            <SubTaskComponent onAddSubTask={onSubTaskComponentAddSubTask}/>
+                        </li> )
+                    }
+                </ul>
+                 {/*<AddSubTask/>*/}
+
             </Box>
         </Modal>
     );
