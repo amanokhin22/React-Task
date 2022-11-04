@@ -34,7 +34,7 @@ export interface ModalState {
 }
 
 export interface SubTask {
-    name: string;
+    sub: string;
     id: number;
     completed: boolean;
     taskId?: number;
@@ -53,4 +53,4 @@ export interface SubTaskType {
     onAddSubTask: (data: AddSubTaskDTO) => void;
 }
 
-export type AddSubTaskDTO = Pick<SubTask, 'name'>
+export type AddSubTaskDTO = Pick<SubTask, 'sub'>

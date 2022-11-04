@@ -64,7 +64,7 @@ export const KeepMountedModal: React.FC<STListPropsType> = ({subTaskList}) => {
     const handleClose = () => dispatch(closeModal());
 
     const onSubTaskComponentAddSubTask = (data: AddSubTaskDTO) => {
-        dispatch(postSubTask())
+        dispatch(postSubTask(data))
     }
 
     return (
@@ -91,7 +91,7 @@ export const KeepMountedModal: React.FC<STListPropsType> = ({subTaskList}) => {
 
                 <ul>
                     {
-                        subTaskList.map((subTask) => <li key={task.id}>
+                        subTaskList.map((subTask) => <li key={subTask.id}>
                             <SubTaskComponent onAddSubTask={onSubTaskComponentAddSubTask}/>
                         </li> )
                     }
