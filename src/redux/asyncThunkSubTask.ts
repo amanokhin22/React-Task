@@ -1,34 +1,43 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {AddTaskDTO, SubTask} from "../types/TaskTypes";
+import {AddSubTaskDTO, SubTask} from "../types/TaskTypes";
 import {apiSubTask} from "../API/apiSubTask";
 
 
-export const fetchSubTask = createAsyncThunk(
+export const fetchSubTasks = createAsyncThunk(
     'task/fetchSubTasks',
-    async () => await apiSubTask.getAll()
+    async () => await apiSubTask.getByTaskId()
 );
 
 export const deleteSubTask = createAsyncThunk(
     'task/deleteSubTask',
     async (subTask: SubTask, {dispatch}) => {
         await apiSubTask.delete(subTask);
-        await dispatch(fetchSubTask());
+        await dispatch(fetchSubTasks());
     }
 );
 
 export const postSubTask = createAsyncThunk(
     'task/postSubTask',
-    async (data: AddTaskDTO, {dispatch}) => {
+    async (data: AddSubTaskDTO, {dispatch}) => {
         await apiSubTask.create(data);
-        await dispatch(fetchSubTask());
+        await dispatch(fetchSubTasks());
     }
 );
+
+export const patchSubTask = createAsyncThunk(
+    'task/postSubTask',
+    async (data: SubTask, {dispatch}) => {
+        await apiSubTask.put(data);
+        await dispatch(fetchSubTasks());
+    }
+);
+
 
 export const toggleSubTask = createAsyncThunk(
     'task/toggleSubTask',
     async (subTask: SubTask, {dispatch}) => {
         await apiSubTask.put({...subTask, completed: !subTask.completed});
-        await dispatch(fetchSubTask());
+        await dispatch(fetchSubTasks());
     }
 );
 

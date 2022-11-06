@@ -8,25 +8,23 @@ import {SubTaskType} from "../../types/TaskTypes";
 import styles from "../Tasks.module.css";
 
 
-
-export const SubTaskComponent: React.FC<SubTaskType> = ({onAddSubTask}) => {
-     const [sub, setSub] = useState('');
+export const SubTaskComponent: React.FC<SubTaskType> = ({onEditSubTask, subTask}) => {
+     const [name, setName] = useState(subTask.name);
 
 
     const handleChangeSubTask = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSub(event.target.value)
+        setName(event.target.value)
     };
 
     const handleAddEditSubTask = (event: React.UIEvent) => {
         event.preventDefault();
-        onAddSubTask({sub});
-        setSub('')
+        onEditSubTask({...subTask, name});
     }
 
     return (
                 <div>
                     <div>
-                        <TextField value={sub} onChange={handleChangeSubTask} className={styles.textField}
+                        <TextField value={name} onChange={handleChangeSubTask} className={styles.textField}
                                    label="Create new subTask"
                         />
                     </div>

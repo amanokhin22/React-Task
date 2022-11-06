@@ -7,6 +7,7 @@ import TasksList from "../taskList/TasksList";
 import {selectTasksList} from "../../selectors/Selectors";
 import {AddTaskDTO, Task} from "../../types/TaskTypes";
 import {deleteTask, fetchTask, postTask, toggleTask} from "../../redux/asyncThunkTask";
+import {fetchSubTasks} from "../../redux/asyncThunkSubTask";
 
 
 export const Home: React.FC = () => {
@@ -15,7 +16,8 @@ export const Home: React.FC = () => {
 
     useEffect(() => {
         dispatch(fetchTask());
-        //dispatch(fetchSubTask())
+        dispatch(fetchSubTasks())
+        //dispatch(fetchSubTasks())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

@@ -9,11 +9,11 @@ import {FormControlLabel, FormGroup, Switch} from "@mui/material";
 import {KeepMountedModal} from "../../modal/KeepMountedModal";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {openModal} from "../../redux/modalSlice";
-import {selectSubTasksList} from "../../selectors/Selectors";
+import {selectModalSubTasks} from "../../selectors/Selectors";
 
 
 const TasksList: React.FC<ListPropsType> = ({taskList, onDelete, onToggle}) => {
-    const subTaskList = useAppSelector(selectSubTasksList)
+    const subTaskList = useAppSelector(selectModalSubTasks)
     const dispatch = useAppDispatch();
 
     return (
@@ -27,7 +27,10 @@ const TasksList: React.FC<ListPropsType> = ({taskList, onDelete, onToggle}) => {
                                                   control={<Switch checked={task.completed} size="small"/>}
                                                   label={task.completed ? 'To do' : 'Done'}
                                 />
-                                <span onClick={() => dispatch(openModal(task.id))}>{task.name}</span>
+                                <span onClick={() => {
+                                    dispatch(openModal(task.id))
+                                }
+                                }>{task.name}</span>
                                 <div>
                                     <Button onClick={() => onDelete(task)}
                                             variant="outlined"

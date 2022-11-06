@@ -7,11 +7,11 @@ import {selectIsModalOpen, selectModalTask} from '../selectors/Selectors';
 import {closeModal} from '../redux/modalSlice';
 import {useEffect, useState} from 'react';
 import {FormControl, TextareaAutosize} from '@mui/material';
-import {AddSubTaskDTO, STListPropsType, Task} from '../types/TaskTypes';
+import { STListPropsType, SubTask, Task} from '../types/TaskTypes';
 import styles from './Modal.module.css'
 import {putTask} from "../redux/asyncThunkTask";
 import {SubTaskComponent} from "../components/subTaskInModal/SubTaskComponent";
-import {postSubTask} from "../redux/asyncThunkSubTask";
+import {patchSubTask} from "../redux/asyncThunkSubTask";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -63,8 +63,8 @@ export const KeepMountedModal: React.FC<STListPropsType> = ({subTaskList}) => {
 
     const handleClose = () => dispatch(closeModal());
 
-    const onSubTaskComponentAddSubTask = (data: AddSubTaskDTO) => {
-        dispatch(postSubTask(data))
+    const editSubTaskComponent = (data: SubTask) => {
+        dispatch(patchSubTask(data))
     }
 
     return (
@@ -92,11 +92,14 @@ export const KeepMountedModal: React.FC<STListPropsType> = ({subTaskList}) => {
                 <ul>
                     {
                         subTaskList.map((subTask) => <li key={subTask.id}>
-                            <SubTaskComponent onAddSubTask={onSubTaskComponentAddSubTask}/>
+                            <SubTaskComponent subTask={subTask} onEditSubTask={editSubTaskComponent}/>
                         </li> )
                     }
+                    <li>
+                        {/*<AddSubTask/> */} To do AddSubTaskComponent
+                    </li>
                 </ul>
-                 {/*<AddSubTask/>*/}
+
 
             </Box>
         </Modal>

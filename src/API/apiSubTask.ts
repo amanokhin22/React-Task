@@ -1,22 +1,22 @@
 import axios from 'axios';
-import {AddTaskDTO, SubTask} from "../types/TaskTypes";
+import {AddSubTaskDTO, SubTask} from "../types/TaskTypes";
 
 
 const axiosInstance = axios.create({
     withCredentials: true,
-    baseURL: `http://localhost:3001/SubTasks`,
+    baseURL: `http://localhost:3001/sub-tasks`,
     headers: {
         "API-KEY": ""
     }
 });
 
 export const apiSubTask = {
-    async getAll() {
+    async getByTaskId() {
         const res = await axiosInstance.get<SubTask[]>('');
         return res.data
     },
 
-    async create(data: AddTaskDTO) {
+    async create(data: AddSubTaskDTO) {
         await axiosInstance.post('', data);
     },
 

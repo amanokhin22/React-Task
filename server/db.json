@@ -2,12 +2,12 @@
   "tasks": [
     {
       "id": 19,
-      "name": "In hoc signo vinces — Под этим знаменем ты победишь!!!",
+      "name": "In hoc signo vinces — Под этим знаменем ты ",
       "completed": true
     },
     {
       "id": 20,
-      "name": "SubTask",
+      "name": "Subtask",
       "completed": true
     },
     {
@@ -89,14 +89,33 @@
       "name": "Homo sum, humani nihil a me alienum puto — Я человек, ничто человеческое мне не чуждо",
       "id": 38,
       "completed": true
+    },
+    {
+      "name": "юдбль",
+      "id": 39,
+      "completed": true
     }
   ],
-  "subTasks": [
+  "sub-tasks": [
     {
-      "name": "",
-      "id": 12,
-      "completed": true,
-      "taskId": 34
+      "id": 20,
+      "taskId": 19,
+      "name": "dfghjkl",
+      "completed": true
+    },
+    {
+      "id": 21,
+      "taskId": 19,
+      "name": "ппролд",
+      "completed": true
+    },
+    {
+      "name": "dfghjkl;",
+      "id": 22
+    },
+    {
+      "name": ",kjmnhgbvfcd",
+      "id": 23
     }
   ]
 }

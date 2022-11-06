@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 import {SubTask, SubTaskState} from "../types/TaskTypes";
-import {deleteSubTask, fetchSubTask, postSubTask, toggleSubTask} from "./asyncThunkSubTask";
+import {deleteSubTask, fetchSubTasks, postSubTask, toggleSubTask} from "./asyncThunkSubTask";
 
 
 const initialState: SubTaskState = {
@@ -18,7 +18,7 @@ export const subTaskSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchSubTask.fulfilled, (state, action) => {
+        builder.addCase(fetchSubTasks.fulfilled, (state, action) => {
             state.subTaskList = action.payload;
             state.loading = false;
         });
