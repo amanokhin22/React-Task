@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import {ListPropsType} from '../../types/TaskTypes';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {FormControlLabel, FormGroup, Switch} from "@mui/material";
-import {KeepMountedModal} from "../../modal/KeepMountedModal";
+import {KeepMountedModal} from "../modal/KeepMountedModal";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {openModal} from "../../redux/modalSlice";
 import {selectModalSubTasks} from "../../selectors/Selectors";

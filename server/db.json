@@ -8,13 +8,8 @@
     {
       "id": 20,
       "taskId": 19,
-      "name": "Hello",
+      "name": "Почему это сохраняется?",
       "completed": false
-    },
-    {
-      "name": "Abusus non tollit usum — Злоупотребление не отменяет употребления",
-      "id": 21,
-      "completed": true
     },
     {
       "name": "Vi veri universum (veniversum) vivus vici — Силой истины я, живущий, покорил вселенную",
@@ -90,33 +85,14 @@
       "name": "Homo sum, humani nihil a me alienum puto — Я человек, ничто человеческое мне не чуждо",
       "id": 38,
       "completed": true
-    },
-    {
-      "name": "юдбль",
-      "id": 39,
-      "completed": true
     }
   ],
   "sub-tasks": [
     {
       "id": 20,
       "taskId": 19,
-      "name": "dfghjkl",
+      "name": "Почему это сохраняется?,,,,,",
       "completed": false
-    },
-    {
-      "id": 21,
-      "taskId": 19,
-      "name": "ппролд",
-      "completed": false
-    },
-    {
-      "name": "dfghjkl;",
-      "id": 22
-    },
-    {
-      "name": ",kjmnhgbvfcd",
-      "id": 23
     }
   ]
 }

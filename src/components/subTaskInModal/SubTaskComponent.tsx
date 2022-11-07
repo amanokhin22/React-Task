@@ -52,17 +52,17 @@ export const SubTaskComponent: React.FC<SubTaskType> = ({onEditSubTask, onToggle
                     <ListItem alignItems="center">
                         <Checkbox
                             checked={subTask.completed}
-                            placeholder={subTask.completed ? 'To do' : 'Done'}
+                            value={subTask.completed ? 'To do' : 'Done'}
                             onChange={() => onToggle(subTask)}
                             inputProps={{"aria-label": "primary checkbox"}}
                         />
-                        <TextField onBlur={handleEditSubTaskOut} onKeyDown={handleEditSubTaskEnter} value={name} onChange={handleChangeSubTask} className={styles.textField}
+                        <TextField onBlur={handleEditSubTaskOut} onKeyDown={handleEditSubTaskEnter} value={name}
+                                   onChange={handleChangeSubTask} className={styles.textField}
                                    label="Create new subTask"
                         />
                     </ListItem>
                 </List>
             </div>
-
             <Button size="small" onClick={handleAddEditSubTask} variant="contained" color="success">
                 Add Edit task
             </Button>

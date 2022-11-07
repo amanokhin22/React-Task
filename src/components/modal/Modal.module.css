@@ -1,0 +1,25 @@
+.textarea {
+    min-height: 110px !important;
+    min-width: 400px !important;
+    padding: 20px;
+}
+
+.checkBox {
+    padding: 15px !important;
+}
+
+.boxNeedMoreLongNameOfTheStyleBecauseTheMaterial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    background-color: whitesmoke;
+    border: 2px solid #000;
+    scroll-behavior: auto;
+    list-style: none !important;
+}
+
+.ulBox {
+    list-style: none !important;
+}
