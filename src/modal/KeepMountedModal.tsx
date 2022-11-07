@@ -11,7 +11,8 @@ import { STListPropsType, SubTask, Task} from '../types/TaskTypes';
 import styles from './Modal.module.css'
 import {putTask} from "../redux/asyncThunkTask";
 import {SubTaskComponent} from "../components/subTaskInModal/SubTaskComponent";
-import {patchSubTask} from "../redux/asyncThunkSubTask";
+import {patchSubTask, toggleSubTask} from "../redux/asyncThunkSubTask";
+import {AddSubTaskComponent} from "../components/AddSubTaskComponent/AddSubTaskComponent";
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -66,6 +67,9 @@ export const KeepMountedModal: React.FC<STListPropsType> = ({subTaskList}) => {
     const editSubTaskComponent = (data: SubTask) => {
         dispatch(patchSubTask(data))
     }
+    const onSubTaskToggle =  async (data: SubTask) => {
+        dispatch(toggleSubTask(data))
+    }
 
     return (
         <Modal
@@ -92,11 +96,11 @@ export const KeepMountedModal: React.FC<STListPropsType> = ({subTaskList}) => {
                 <ul>
                     {
                         subTaskList.map((subTask) => <li key={subTask.id}>
-                            <SubTaskComponent subTask={subTask} onEditSubTask={editSubTaskComponent}/>
+                            <SubTaskComponent onToggle={onSubTaskToggle} subTask={subTask} onEditSubTask={editSubTaskComponent}/>
                         </li> )
                     }
                     <li>
-                        {/*<AddSubTask/> */} To do AddSubTaskComponent
+                         <AddSubTaskComponent />
                     </li>
                 </ul>
 

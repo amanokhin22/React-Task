@@ -52,6 +52,7 @@ export interface STListPropsType {
 export interface SubTaskType {
     onEditSubTask: (data: SubTask) => void;
     subTask: SubTask;
+    onToggle: (subTask: SubTask) => void;
 }
 
 export type AddSubTaskDTO = Pick<SubTask, 'name' | 'taskId'>

@@ -7,8 +7,9 @@
     },
     {
       "id": 20,
-      "name": "Subtask",
-      "completed": true
+      "taskId": 19,
+      "name": "Hello",
+      "completed": false
     },
     {
       "name": "Abusus non tollit usum — Злоупотребление не отменяет употребления",
@@ -101,13 +102,13 @@
       "id": 20,
       "taskId": 19,
       "name": "dfghjkl",
-      "completed": true
+      "completed": false
     },
     {
       "id": 21,
       "taskId": 19,
       "name": "ппролд",
-      "completed": true
+      "completed": false
     },
     {
       "name": "dfghjkl;",
